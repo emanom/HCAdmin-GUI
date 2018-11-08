@@ -1,5 +1,5 @@
-// import {get,run} from './cmd'
-const cmd = require('node-cmd');
+import addDataState from '../components/main';
+import cmd from 'node-cmd'
 
 // First get all the apps from .holochain
 export var getAllApps = () => {
@@ -64,6 +64,7 @@ const manageAllApps = (allApps) => {
   }
 
   console.log("App_Details: ", app_details)
+  addDataState(app_details);
 };
 // Second find what apps are running and assign appropriate flags for those apps
 const getInstalledApps = () => {

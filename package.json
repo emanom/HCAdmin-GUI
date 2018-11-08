@@ -2,6 +2,9 @@
   "name": "HCAdmin-GUI",
   "version": "0.1.0",
   "private": true,
+  "browser": {
+    "child_process": false
+  },
   "devDependencies": {
     "@types/jest": "^23.3.1",
     "babel-jest": "^23.6.0",
@@ -33,7 +36,7 @@
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-start": "node src/electron-wait-react",
-    "react-start": "react-scripts start",
+    "react-start": "cross-env BROWSER={child_process:true} react-scripts start",
     "kill-port": "sudo kill `sudo lsof -t -i:3000`"
   },
   "jest": {

@@ -8,6 +8,7 @@ import { render } from "react-dom";
 // import _get from "lodash.get";
 import { makeData, Logo, Tips } from "../utils/Utils";
 import { advancedExpandTableHOC } from "./systemTable";
+import { getAllApps } from "../utils/app-cmd";
 
 // Import React Table
 import ReactTable from "react-table";
@@ -16,13 +17,23 @@ import "react-table/react-table.css";
 
 const AdvancedExpandReactTable = advancedExpandTableHOC(ReactTable);
 
+export const addDataState = (app_details)=>{
+  this.state = {
+    apps: app_details
+  };
+}
+
 export class Main extends Component {
   constructor(props) {
     super(props);
+    getAllApps();
     this.state = {
       data: makeData()
     };
   }
+
+  const
+
   render() {
     const { data } = this.state;
     return (
